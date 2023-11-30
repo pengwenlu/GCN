@@ -17,7 +17,7 @@ case class PE (rightBoundary: Boolean, bottomBoundary: Boolean) extends Componen
 
     val weightSwitch = in Bool() //ping-pong control(rising edge valid)
 
-
+    //val weight
     val outAct = (!rightBoundary).generate(master Flow SFix(peak = 0 exp, resolution = -(quantifyWidth-1) exp))
     // ping-pong, outWt is all controlled by a global valid signal, only inWt is flow with valid, outWt is out
     val outWt = (!bottomBoundary).generate(out Vec(SFix(peak = 0 exp, resolution = -(quantifyWidth-1) exp), 3))
